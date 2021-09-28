@@ -1,0 +1,51 @@
+* amsplot.r - plot amsterdam neighborhood data geographically.
+
+** installation
+
+if you're familiar with git, i would recommend cloning it to some directory and
+loading the source file from there directly.
+
+for the non-gitters, you can download a zip (green button in the top
+right). put that somewhere on your computer, and then load the =amsplot.r=
+package with the following line of R code (replace the filepath):
+
+=source('~/the/path/to/amsplot.r')=
+
+** how did you make this?
+
+well, honestly, just googling around for stuff like "display geographical data
+r" and "display values in geographical areas r". then i copied over the code,
+read it, and changed a bunch to make it work with the amsterdam data.
+
+i strongly encourage you to read through the code and my comments. hopefully
+you learn something from that!
+
+** on a personal note
+
+in programming and development, an INCREDIBLE amount of work is done by
+open-source developers -- often in their free time, often completely for
+free. without their efforts, the process of programming would be WAY more
+labourious, and technology would not be as far as it is today; probably, lots
+of the software we take for granted would not exist today. the programming
+community is heavily based on the open sharing of knowledge and code, and
+people helping other people out: you yourself have probably gotten a lot of
+help from stackoverflow by now. i, in my five+ years of coding experience, have
+used it daily, and continue to do so, and i think that's the case for most
+programmers.  i've learnt so much from the community in the last five years,
+and have depended so much on the efforts by open-source programmers (by
+literally /millions/ of people), that i want to take any chance i have to give
+back to the community. (and in this case, that's you, my co-MADE-students!)
+that's why i provide this script for you, and why i took extra efforts in
+commenting it.  to get the most out of this script, read the code line-by-line,
+and try to figure out what it does and why it needs to be there. hopefully, the
+comments help out with that.
+
+i encourage you, if you continue in coding endeavours, to give back to the
+community! try to answer a stackoverflow question, or make a contribution to an
+open-source project. you'll learn from it, and we can continue this magical
+cycle of the passing on of knowledge.
+
+also, i'm always happy to help with any questions you have (as long as i get to
+finish my code too ;)
+
+love! j

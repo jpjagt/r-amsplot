@@ -10,9 +10,9 @@ generate plots like this with a single line of code:
 if you're familiar with git, i would recommend cloning it to some directory and
 loading the source file from there directly.
 
-for the non-gitters, you can download a zip (green button in the top
-right). put that somewhere on your computer, and then load the =amsplot.r=
-package with the following line of R code (replace the filepath):
+for the non-gitters, you can download a zip (green button in the top right
+labelled "Code"). put that somewhere on your computer, and then load the
+=amsplot.r= package with the following line of R code (replace the filepath):
 
 =source('~/the/path/to/amsplot.r', chdir=TRUE)=
 

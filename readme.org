@@ -1,5 +1,10 @@
 * amsplot.r - plot amsterdam neighborhood data geographically.
 
+generate plots like this with a single line of code:
+
+[[file:./hou_satisfaction_in_2019.png]]
+
+
 ** installation
 
 if you're familiar with git, i would recommend cloning it to some directory and

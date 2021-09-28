@@ -2,7 +2,7 @@
 
 generate plots like this with a single line of code:
 
-[[file:./hou_satisfaction_in_2019.png]]
+[[file:./plots/hou_value_in_2019.png]]
 
 
 ** installation

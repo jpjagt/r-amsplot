@@ -3,12 +3,16 @@ title: example usage of amsplot.r
 author: july (jpjagt)
 ---
 
+## loading the plotting functionality
+
 first, we load the file so that we can use the functions inside.
 
 ```{r}
 # assuming the file is in the same directory.
 source("./amsplot.r")
 ```
+
+## loading the data
 
 next, we read a dataset file, and perform some basic pre-processing to convert
 the categorical ranking columns to numerical columns, using the
@@ -37,12 +41,16 @@ per neighborhood). let's make a filtered dataframe which only contains values fr
 df_housing_2019 <- df_housing[df_housing$year == 2019,]
 ```
 
+## plotting some data
+
 okay, we're ready to plot! let's first display a plot directly. for instance,
 the self-reported satisfaction:
 
 ```{r}
 print(amsplot_col(df_housing_2019, "hou_satisfaction"))
 ```
+
+### normalizing by a column
 
 cool! what about the number of small houses (< 40m2)?
 
@@ -56,12 +64,13 @@ each neighborhood.
 print(amsplot_col(df_housing_2019, "hou_40", normalize_by="hou_total"))
 ```
 
+### saving a plot as .png
+
 if we want to save a plot, we refrain from printing it, and instead use the
-function ggsave:
+function ggsave. i recommend saving your figures in a separate folder called
+"plots" or "figures":
 
 ```{r}
-print(amsplot_col(df_housing_2019, "hou_satisfaction"))
-ggsave("hou_satisfaction_in_2019.png")
+print(amsplot_col(df_housing_2019, "hou_value"))
+ggsave("./figures/hou_value_in_2019.png")
 ```
-
-that should save a PNG in the current (working) directory.

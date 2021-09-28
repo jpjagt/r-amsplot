@@ -1,0 +1,67 @@
+---
+title: example usage of amsplot.r
+author: july (jpjagt)
+---
+
+first, we load the file so that we can use the functions inside.
+
+```{r}
+# assuming the file is in the same directory.
+source("./amsplot.r")
+```
+
+next, we read a dataset file, and perform some basic pre-processing to convert
+the categorical ranking columns to numerical columns, using the
+categorical_ranking2number function provided by amsplot.r.
+
+```{r}
+# the location of the housing dataset.
+df_housing_fpath <- './datasets/amsterdam_housing.csv'
+
+# read the file.
+df_housing <- read.csv(df_housing_fpath)
+
+# satisfaction, condition, maintenance, neighborhood, development, homefeel
+# are all categorical ranking columns, so convert those.
+df_housing$hou_satisfaction <- categorical_ranking2number(df_housing$hou_satisfaction)
+df_housing$hou_condition <- categorical_ranking2number(df_housing$hou_condition)
+df_housing$hou_maintenance <- categorical_ranking2number(df_housing$hou_maintenance)
+df_housing$hou_neighborhood <- categorical_ranking2number(df_housing$hou_neighborhood)
+df_housing$hou_development <- categorical_ranking2number(df_housing$hou_development)
+df_housing$hou_homefeel <- categorical_ranking2number(df_housing$hou_homefeel)
+```
+
+next, we have to select a single year (because we can only display one value
+per neighborhood). let's make a filtered dataframe which only contains values from 2019:
+```{r}
+df_housing_2019 <- df_housing[df_housing$year == 2019,]
+```
+
+okay, we're ready to plot! let's first display a plot directly. for instance,
+the self-reported satisfaction:
+
+```{r}
+print(amsplot_col(df_housing_2019, "hou_satisfaction"))
+```
+
+cool! what about the number of small houses (< 40m2)?
+
+well, of course, the total number of small houses in a neighborhood depends on
+the total number of houses in that neighborhood, so we can't really compare it
+directly.  therefore, let's plot the average number of small houses by
+normalizing the total number of small houses by the total number of houses in
+each neighborhood.
+
+```{r}
+print(amsplot_col(df_housing_2019, "hou_40", normalize_by="hou_total"))
+```
+
+if we want to save a plot, we refrain from printing it, and instead use the
+function ggsave:
+
+```{r}
+print(amsplot_col(df_housing_2019, "hou_satisfaction"))
+ggsave("hou_satisfaction_in_2019.png")
+```
+
+that should save a PNG in the current (working) directory.

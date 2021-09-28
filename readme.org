@@ -9,7 +9,7 @@ for the non-gitters, you can download a zip (green button in the top
 right). put that somewhere on your computer, and then load the =amsplot.r=
 package with the following line of R code (replace the filepath):
 
-=source('~/the/path/to/amsplot.r')=
+=source('~/the/path/to/amsplot.r', chdir=TRUE)=
 
 ** how did you make this?
 
